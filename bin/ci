@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+
+def run_step(name, command)
+  puts "\n" + ("=" * 60)
+  puts "Running: #{name}"
+  puts "=" * 60
+
+  system(command)
+  exit_code = $CHILD_STATUS&.exitstatus || $?.exitstatus
+
+  if exit_code.zero?
+    puts "✓ #{name} passed"
+  else
+    puts "✗ #{name} failed (exit code: #{exit_code})"
+    exit exit_code
+  end
+end
+
+puts "\n" + ("=" * 60)
+puts "JSON-LD Ruby Gem CI Pipeline"
+puts "=" * 60
+
+run_step("RuboCop", "bundle exec rubocop")
+run_step("Reek", "bundle exec reek")
+run_step("RSpec", "bundle exec rspec")
+run_step("Bundler Audit", "bundle exec bundle audit")
+
+puts "\n" + ("=" * 60)
+puts "✓ All CI checks passed"
+puts "=" * 60
