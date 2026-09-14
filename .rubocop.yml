@@ -53,3 +53,7 @@ Style/WordArray:
 
 Gemspec/DevelopmentDependencies:
   Enabled: false
+
+Naming/FileName:
+  Exclude:
+    - "lib/ruby-structured-data.rb"

@@ -31,6 +31,7 @@ end
 require "rspec"
 require "structured_data"
 require "ruby_structured_data"
+require "ruby-structured-data"
 
 RSpec.configure do |config|
   config.disable_monkey_patching!
