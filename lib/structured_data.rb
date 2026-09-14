@@ -14,6 +14,14 @@ require_relative "structured_data/document"
 require_relative "structured_data/validator"
 require_relative "structured_data/serializer"
 
+# Rails integration is optional: StructuredData::Rails::Railtie subclasses
+# ::Rails::Railtie, so requiring it without Rails raises NameError.
+begin
+  require_relative "structured_data/rails"
+rescue LoadError, NameError
+  nil
+end
+
 module StructuredData
   class << self
     def config

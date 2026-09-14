@@ -42,7 +42,7 @@ gem install ruby-structured-data
 Create Schema.org entities using `StructuredData.node`:
 
 ```ruby
-require "ruby_structured_data"
+require "ruby-structured-data"
 
 person = StructuredData.node("Person",
   id: "https://example.com/people/alice",
