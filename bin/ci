@@ -23,7 +23,7 @@ puts "\n" + ("=" * 60)
 puts "JSON-LD Ruby Gem CI Pipeline"
 puts "=" * 60
 
-run_step("RuboCop", "bundle exec rubocop")
+run_step("RuboCop", "bundle exec rubocop --config .rubocop.yml")
 run_step("Reek", "bundle exec reek")
 run_step("RSpec", "bundle exec rspec")
 run_step("Bundler Audit", "bundle exec bundle audit")

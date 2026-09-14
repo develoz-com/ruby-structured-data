@@ -221,7 +221,7 @@ Output is marked `html_safe` and wrapped in:
 The embedded vocabulary definitions can be re-compiled from upstream Schema.org releases using the compiler:
 
 ```bash
-bundle exec rake vocabulary:update
+bundle exec rake schemaorg:update
 ```
 
 ---
